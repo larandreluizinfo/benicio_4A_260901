@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mortal Kombat - Benício 4A</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Tela Inicial -->
+    <div id="screen-title" class="screen active">
+        <div class="title-bg"></div>
+        <h1 class="title-logo">MORTAL KOMBAT</h1>
+        <p class="title-sub">BENÍCIO 4A - EDIÇÃO ESPECIAL</p>
+        <button class="btn-start" onclick="showCharacterSelect()">INICIAR JOGO</button>
+        <div class="controls-info">
+            <div class="player-controls">
+                <h3>JOGADOR 1</h3>
+                <p>A/D - Mover | W - Pular</p>
+                <p>J - Soco | K - Chute | L - Especial</p>
+            </div>
+            <div class="player-controls">
+                <h3>JOGADOR 2</h3>
+                <p>←/→ - Mover | ↑ - Pular</p>
+                <p>1 - Soco | 2 - Chute | 3 - Especial</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tela de Seleção de Personagens -->
+    <div id="screen-select" class="screen">
+        <h2 class="select-title">SELECIONE SEU GUERREIRO</h2>
+        <div class="select-container">
+            <div class="player-select" id="p1-select">
+                <h3>JOGADOR 1</h3>
+                <div class="player-preview" id="p1-preview"></div>
+                <p class="selected-name" id="p1-name">???</p>
+            </div>
+            <div class="character-grid" id="char-grid"></div>
+            <div class="player-select" id="p2-select">
+                <h3>JOGADOR 2</h3>
+                <div class="player-preview" id="p2-preview"></div>
+                <p class="selected-name" id="p2-name">???</p>
+            </div>
+        </div>
+        <button class="btn-fight" id="btn-fight" onclick="startFight()">LUTAR!</button>
+        <p class="select-hint">Jogador 1: Clique no personagem | Jogador 2: Clique com botão direito</p>
+    </div>
+
+    <!-- Tela de Luta -->
+    <div id="screen-fight" class="screen">
+        <div class="fight-hud">
+            <div class="health-section">
+                <div class="player-info">
+                    <span class="hud-name" id="hud-p1-name">JOGADOR 1</span>
+                    <div class="health-bar">
+                        <div class="health-fill" id="p1-health"></div>
+                        <div class="health-damage" id="p1-damage"></div>
+                    </div>
+                </div>
+                <div class="timer" id="timer">99</div>
+                <div class="player-info right">
+                    <span class="hud-name" id="hud-p2-name">JOGADOR 2</span>
+                    <div class="health-bar p2">
+                        <div class="health-fill" id="p2-health"></div>
+                        <div class="health-damage" id="p2-damage"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="arena" id="arena">
+            <div class="fighter" id="fighter-p1"></div>
+            <div class="fighter" id="fighter-p2"></div>
+            <div class="hit-effect" id="hit-p1"></div>
+            <div class="hit-effect" id="hit-p2"></div>
+        </div>
+
+        <div class="fight-overlay" id="fight-overlay">
+            <span class="fight-text" id="fight-text">ROUND 1</span>
+        </div>
+
+        <div class="combo-display" id="combo-p1"></div>
+        <div class="combo-display right" id="combo-p2"></div>
+    </div>
+
+    <!-- Tela de Vitória -->
+    <div id="screen-result" class="screen">
+        <h2 class="result-title" id="result-title">VITÓRIA!</h2>
+        <p class="result-winner" id="result-winner"></p>
+        <div class="result-fighter" id="result-fighter"></div>
+        <button class="btn-start" onclick="showCharacterSelect()">JOGAR NOVAMENTE</button>
+        <button class="btn-start" onclick="showTitle()">MENU PRINCIPAL</button>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
